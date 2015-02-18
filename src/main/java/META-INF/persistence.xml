@@ -3,7 +3,8 @@
 	<persistence-unit name="clientapi" transaction-type="RESOURCE_LOCAL">
 	 	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>  
     	<class>com.aeolos.model.Employee</class>
-    	<class>com.aeolos.model.Callback</class>  
+    	<class>com.aeolos.model.Callback</class>
+    	<class>com.aeolos.model.Timeslot</class>  
     	<exclude-unlisted-classes>true</exclude-unlisted-classes>  
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://intranet.pcubed.ie:3306/callbacks"/>

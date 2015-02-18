@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.aeolos.model.Callback;
 import com.aeolos.model.Employee;
+import com.aeolos.model.Timeslot;
 
 public interface IEmployeeService {
 	
@@ -15,4 +16,5 @@ public interface IEmployeeService {
 	List<Callback> GetCallbacksByDateTime(String cbdate, String cbtime);
 	String DeleteCallback(long id);
 	Callback UpdateCallback(long id, String notes);
+	List<Timeslot> GetTimeSlot(String paramdate);
 }

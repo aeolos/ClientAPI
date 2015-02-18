@@ -10,6 +10,7 @@ import javax.persistence.StoredProcedureQuery;
 import com.aeolos.listener.LocalEntityManagerFactory;
 import com.aeolos.model.Employee;
 import com.aeolos.model.Callback;
+import com.aeolos.model.Timeslot;
 
 	
 public class EmployeeRepo implements IEmployeeRepo {
@@ -152,6 +153,22 @@ public class EmployeeRepo implements IEmployeeRepo {
 			em.getTransaction().commit();
 			return callback;
 		} finally {			
+			em.close();
+		}
+	}
+	
+	@Override
+	public List<Timeslot> getTimeslot(String paramdate) {
+		try {
+			em.getTransaction().begin();
+			StoredProcedureQuery query = em.createStoredProcedureQuery("GetTimeslotByDate", Timeslot.class);
+			query.registerStoredProcedureParameter("paramdate", String.class, ParameterMode.IN);
+			query.setParameter("paramdate", paramdate);
+			query.execute();
+			em.getTransaction().commit();
+			List<Timeslot> result = query.getResultList();
+			return result;
+		} finally {
 			em.close();
 		}
 	}

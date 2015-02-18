@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.aeolos.dao.EmployeeRepo;
 import com.aeolos.model.Callback;
 import com.aeolos.model.Employee;
+import com.aeolos.model.Timeslot;
 
 public class EmployeeService implements IEmployeeService{
  
@@ -57,6 +58,11 @@ public class EmployeeService implements IEmployeeService{
 	@Override
 	public Callback SaveCallback(Callback callback) {   	
     	return repo.SaveCallback(callback);
+    } 
+	
+	@Override
+	public List<Timeslot> GetTimeSlot(String paramdate) {   	
+    	return repo.getTimeslot(paramdate);
     } 
 	
 }

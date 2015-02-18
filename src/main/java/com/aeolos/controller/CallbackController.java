@@ -14,6 +14,7 @@ import javax.ws.rs.core.MediaType;
 
 import com.aeolos.dao.EmployeeRepo;
 import com.aeolos.model.Callback;
+import com.aeolos.model.Timeslot;
 import com.aeolos.service.EmployeeService;
 
 @Path("/callback") 
@@ -29,6 +30,18 @@ public class CallbackController {
     	return service.GetAllCallbacks();
     }
     
+    @GET  
+    @Path("/timeslot")
+    @Produces(MediaType.APPLICATION_JSON) 
+    public List<Timeslot> gettimeslot(@QueryParam("paramdate") String paramdate) {   	
+    	try {
+			List<Timeslot> result = service.GetTimeSlot(paramdate);
+			return result;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+    }
     
     @GET  
     @Path("/get")

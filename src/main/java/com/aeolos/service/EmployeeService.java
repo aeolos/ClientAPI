@@ -65,4 +65,14 @@ public class EmployeeService implements IEmployeeService{
     	return repo.getTimeslot(paramdate);
     } 
 	
+	@Override
+	public String UpdateTimeSlot(String paramdate, String paramslot) {   	
+    	return repo.updateTimeSlot(paramdate, paramslot);
+    }
+	
+	@Override
+	public String UpdateCallbackStatus(Long paramid, String paramstatus) {   	
+    	return repo.updateCallbackStatus(paramid, paramstatus);
+    } 
+	
 }

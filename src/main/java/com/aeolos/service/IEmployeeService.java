@@ -17,4 +17,6 @@ public interface IEmployeeService {
 	String DeleteCallback(long id);
 	Callback UpdateCallback(long id, String notes);
 	List<Timeslot> GetTimeSlot(String paramdate);
+	String UpdateTimeSlot(String paramdate, String paramslot);
+	String UpdateCallbackStatus(Long paramid, String paramstatus);
 }

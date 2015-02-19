@@ -64,6 +64,30 @@ public class CallbackController {
     }
     
     @GET  
+    @Path("/updateslot")
+    @Produces(MediaType.TEXT_PLAIN) 
+    public String updatetimeslot(@QueryParam("paramdate") String paramdate, @QueryParam("paramslot") String paramslot) {   	
+    	try {
+			return service.UpdateTimeSlot(paramdate, paramslot);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Error";
+		}
+    }
+    
+    @GET  
+    @Path("/updatestatus")
+    @Produces(MediaType.TEXT_PLAIN) 
+    public String updatestatus(@QueryParam("paramid") Long paramid, @QueryParam("paramstatus") String paramstatus) {   	
+    	try {
+			return service.UpdateCallbackStatus(paramid, paramstatus);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Error";
+		}
+    }
+    
+    @GET  
     @Produces(MediaType.APPLICATION_JSON)  
     @Path("{id}")  
     public Callback read(@PathParam("id") long id) {   	

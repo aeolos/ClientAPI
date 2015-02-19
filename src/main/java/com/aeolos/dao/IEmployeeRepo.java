@@ -18,4 +18,6 @@ public interface IEmployeeRepo {
 	String deleteCallback(long id);
 	Callback updateCallback(long id, String notes);
 	List<Timeslot> getTimeslot(String date);
+	String updateTimeSlot(String date, String slot);
+	String updateCallbackStatus(Long paramid, String paramstatus);
 }

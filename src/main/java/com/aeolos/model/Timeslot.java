@@ -42,6 +42,8 @@ public class Timeslot {
 	private int slotj;
 	@Column(name = "slotk") 
 	private int slotk;
+	@Column(name = "slotl") 
+	private int slotl;
 	@Column(name = "slotm") 
 	private int slotm;
 	@Column(name = "slotn") 
@@ -127,6 +129,12 @@ public class Timeslot {
 	}
 	public void setSlotk(int slotk) {
 		this.slotk = slotk;
+	}
+	public int getSlotl() {
+		return slotl;
+	}
+	public void setSlotl(int slotl) {
+		this.slotl = slotl;
 	}
 	public int getSlotm() {
 		return slotm;

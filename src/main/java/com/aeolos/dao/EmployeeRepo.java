@@ -66,6 +66,7 @@ public class EmployeeRepo implements IEmployeeRepo {
 	@SuppressWarnings("unchecked")
 	public List<Callback> getCallbacksByDateTime(String cbdate, String cbtime) {
 		try {
+			em.getEntityManagerFactory().getCache().evictAll();
 			StoredProcedureQuery query = em.createStoredProcedureQuery(
 					"GetCallbacksByDateTime", Callback.class);
 			query.registerStoredProcedureParameter("paramDate", String.class,
@@ -88,6 +89,7 @@ public class EmployeeRepo implements IEmployeeRepo {
 	@Override
 	public Callback getCallback(long id) {
 		try {
+			em.getEntityManagerFactory().getCache().evictAll();
 			Callback result = new Callback();
 			result = em.find(Callback.class, id);
 			return result;
@@ -162,6 +164,7 @@ public class EmployeeRepo implements IEmployeeRepo {
 	@Override
 	public List<Timeslot> getTimeslot(String paramdate) {
 		try {
+			em.getEntityManagerFactory().getCache().evictAll();
 			em.getTransaction().begin();
 			StoredProcedureQuery query = em.createStoredProcedureQuery(
 					"GetTimeslotByDate", Timeslot.class);

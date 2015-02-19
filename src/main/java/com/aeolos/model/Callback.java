@@ -37,7 +37,7 @@ public class Callback {
     private String cbtime;
 	@Column(name = "logdate")  
     private String logdate;
-	@Column(name = "status")  
+	@Column(name = "status")
 	private String status;
 	public String getStatus() {
 		return status;

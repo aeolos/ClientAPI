@@ -123,6 +123,7 @@ public class CallbackController {
     	callback.setCbreason(cbreason);
     	callback.setCbdate(cbdate);
     	callback.setCbtime(cbtime);
+    	callback.setStatus("active");
     	return service.SaveCallback(callback);
     }
    

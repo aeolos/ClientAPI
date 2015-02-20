@@ -207,6 +207,7 @@ public class EmployeeRepo implements IEmployeeRepo {
 	@Override
 	public String updateCallbackStatus(Long paramid, String paramstatus) {
 		try {
+			em.getEntityManagerFactory().getCache().evictAll();
 			em.getTransaction().begin();
 			StoredProcedureQuery query = em
 					.createStoredProcedureQuery("UpdateCallbackStatus");

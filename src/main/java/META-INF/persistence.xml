@@ -7,7 +7,7 @@
     	<class>com.aeolos.model.Timeslot</class>  
     	<exclude-unlisted-classes>true</exclude-unlisted-classes>  
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://intranet.pcubed.ie:3306/callbacks"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/callbacks"/>
 			<property name="javax.persistence.jdbc.user" value="fiosta"/>
 			<property name="javax.persistence.jdbc.password" value="FiostaAdm1n"/>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
